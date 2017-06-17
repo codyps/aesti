@@ -1,16 +1,17 @@
 [package]
-name = "raes"
+name = "aesti"
 version = "0.1.0"
 authors = ["Cody P Schafer <dev@codyps.com>"]
 license = "GPLv2"
-description = "Constant time aes implimentation (originally from Linux)"
+description = "Constant/fixed/invariant time aes implimentation (originally from Linux)"
+keywords = [ "crypto", "aes"]
+include = [ "Cargo.toml", "**/*.rs"]
 
 [dependencies]
 index-fixed = "0.1"
 
 [dev-dependencies]
-openssl = "*"
-rand = "*"
-quickcheck = "*"
-hex = "*"
-fmt-extra = "*"
+openssl = "0.9"
+quickcheck = "0.4"
+hex = "0.2"
+fmt-extra = "0.1"

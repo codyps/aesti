@@ -1,5 +1,4 @@
-extern crate raes;
-extern crate rand;
+extern crate aesti;
 extern crate openssl;
 extern crate hex;
 extern crate fmt_extra;
@@ -28,7 +27,7 @@ impl quickcheck::Arbitrary for AesKind {
 
 fn aes_encrypt(key: &[u8], data: &[u8]) -> Vec<u8>
 {
-    let aes = raes::Aes::with_key(key).unwrap();
+    let aes = aesti::Aes::with_key(key).unwrap();
     let mut out = vec![0;data.len()];
     aes.encrypt(&mut out, data);
     out
@@ -36,7 +35,7 @@ fn aes_encrypt(key: &[u8], data: &[u8]) -> Vec<u8>
 
 fn aes_decrypt(key: &[u8], data: &[u8]) -> Vec<u8>
 {
-    let aes = raes::Aes::with_key(key).unwrap();
+    let aes = aesti::Aes::with_key(key).unwrap();
     let mut out = vec![0;data.len()];
     aes.decrypt(&mut out, data);
     out
