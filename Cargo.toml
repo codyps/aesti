@@ -2,7 +2,7 @@
 name = "aesti"
 version = "0.1.0"
 authors = ["Cody P Schafer <dev@codyps.com>"]
-license = "GPLv2"
+license = "GPL-2.0"
 description = "Constant/fixed/invariant time aes implimentation (originally from Linux)"
 keywords = [ "crypto", "aes"]
 include = [ "Cargo.toml", "**/*.rs"]
