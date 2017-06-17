@@ -8,6 +8,7 @@ keywords = [ "crypto", "aes", "no_std"]
 include = [ "Cargo.toml", "**/*.rs"]
 repository = "https://github.com/jmesmon/aesti"
 documentation = "https://docs.rs/aesti"
+categories = [ "cryptography", "no-std" ]
 
 [dependencies]
 index-fixed = "0.1"
