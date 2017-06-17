@@ -135,12 +135,12 @@ use b::*;
 
 // convenience to handle casts
 #[inline]
-pub fn sbox(idx: u32) -> u32 {
+fn sbox(idx: u32) -> u32 {
     sbox_v(idx as usize) as u32
 }
 
 #[inline]
-pub fn inv_sbox(idx: u32) -> u32 {
+fn inv_sbox(idx: u32) -> u32 {
     inv_sbox_v(idx as usize) as u32
 }
 
