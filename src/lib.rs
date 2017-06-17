@@ -28,14 +28,16 @@
 extern crate index_fixed;
 
 
+/*
 const MIN_KEY_SIZE: usize = 16;
 const MAX_KEY_SIZE: usize = 32;
+*/
 
 const KEY_SIZE_128: usize = 16;
 const KEY_SIZE_192: usize = 24;
 const KEY_SIZE_256: usize = 32;
 
-const BLOCK_SIZE: usize = 16;
+//const BLOCK_SIZE: usize = 16;
 const MAX_KEY_LENGTH: usize = 15 * 16;
 const MAX_KEY_LENGTH_U32: usize = MAX_KEY_LENGTH / 4;
 

@@ -6,6 +6,8 @@ license = "GPLv2"
 description = "Constant/fixed/invariant time aes implimentation (originally from Linux)"
 keywords = [ "crypto", "aes"]
 include = [ "Cargo.toml", "**/*.rs"]
+repository = "https://github.com/jmesmon/aesti"
+documentation = "https://docs.rs/aesti"
 
 [dependencies]
 index-fixed = "0.1"
