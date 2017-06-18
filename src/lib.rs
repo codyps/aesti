@@ -10,18 +10,18 @@
  */
 #![no_std]
 
-/// Scalar fixed time AES core transform
-/// 
-/// This is a straight conversion of the aes_ti.c & aes.h code from the linux kernel.
-/// 
-/// *WARNING*
-/// 
-/// This should be used with a good mode (GCM, EME, XTS, etc). `Aes` here only implements
-/// encryption/decryption of a single block. It is essentially ECB only.
-/// 
-/// In most cases using a complete cryptosystem library like NACL, sodium, and others will be a
-/// better choice. These try to avoid various missteps that can compromise the intended use of this
-/// block cipher.
+//! Scalar fixed time AES core transform
+//!
+//! This is a straight conversion of the aes_ti.c & aes.h code from the linux kernel.
+//!
+//! # **WARNING**
+//!
+//! This should be used with a good mode (GCM, EME, XTS, etc). `Aes` here only implements
+//! encryption/decryption of a single block. It is essentially ECB only.
+//!
+//! In most cases using a complete cryptosystem library like NACL, sodium, and others will be a
+//! better choice. These try to avoid various missteps that can compromise the intended use of this
+//! block cipher.
 
 
 #[macro_use]
