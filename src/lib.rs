@@ -381,10 +381,10 @@ impl Aes {
 	let rounds = 6 + self.key_length / 4;
 
 	let mut st0 : [u32;4] = [
-	    self.key_enc[0] ^ get_unaligned_le32(index_fixed!(&inp;..4)),
-	    self.key_enc[1] ^ get_unaligned_le32(index_fixed!(&inp;4,..8)),
-	    self.key_enc[2] ^ get_unaligned_le32(index_fixed!(&inp;8,..12)),
-	    self.key_enc[3] ^ get_unaligned_le32(index_fixed!(&inp;12,..16)),
+	    self.key_enc[0] ^ get_unaligned_le32(index_fixed!(&inp[..];..4)),
+	    self.key_enc[1] ^ get_unaligned_le32(index_fixed!(&inp[..];4,..8)),
+	    self.key_enc[2] ^ get_unaligned_le32(index_fixed!(&inp[..];8,..12)),
+	    self.key_enc[3] ^ get_unaligned_le32(index_fixed!(&inp[..];12,..16)),
 	];
 
 	st0[0] ^= (sbox_v( 0) ^ sbox_v(128)) as u32;
@@ -415,10 +415,10 @@ impl Aes {
 	    rkp = &{rkp}[8..];
 	}
 
-	put_unaligned_le32(subshift(&st1, 0) ^ rkp[4], index_fixed!(&mut out;..4));
-	put_unaligned_le32(subshift(&st1, 1) ^ rkp[5], index_fixed!(&mut out;4,..8));
-	put_unaligned_le32(subshift(&st1, 2) ^ rkp[6], index_fixed!(&mut out;8,..12));
-	put_unaligned_le32(subshift(&st1, 3) ^ rkp[7], index_fixed!(&mut out;12,..16));
+	put_unaligned_le32(subshift(&st1, 0) ^ rkp[4], index_fixed!(&mut out[..];..4));
+	put_unaligned_le32(subshift(&st1, 1) ^ rkp[5], index_fixed!(&mut out[..];4,..8));
+	put_unaligned_le32(subshift(&st1, 2) ^ rkp[6], index_fixed!(&mut out[..];8,..12));
+	put_unaligned_le32(subshift(&st1, 3) ^ rkp[7], index_fixed!(&mut out[..];12,..16));
     }
 
     pub fn decrypt(&self, out: &mut [u8;16], inp: &[u8;16])
@@ -430,10 +430,10 @@ impl Aes {
 	let rounds: usize = 6 + self.key_length / 4;
 
 	let mut st0 = [ 
-	    self.key_dec[0] ^ get_unaligned_le32(index_fixed!(&inp;..4)),
-	    self.key_dec[1] ^ get_unaligned_le32(index_fixed!(&inp;4,..8)),
-	    self.key_dec[2] ^ get_unaligned_le32(index_fixed!(&inp;8,..12)),
-	    self.key_dec[3] ^ get_unaligned_le32(index_fixed!(&inp;12,..16))
+	    self.key_dec[0] ^ get_unaligned_le32(index_fixed!(&inp[..];..4)),
+	    self.key_dec[1] ^ get_unaligned_le32(index_fixed!(&inp[..];4,..8)),
+	    self.key_dec[2] ^ get_unaligned_le32(index_fixed!(&inp[..];8,..12)),
+	    self.key_dec[3] ^ get_unaligned_le32(index_fixed!(&inp[..];12,..16))
 	];
 
 	st0[0] ^= (inv_sbox_v( 0) ^ inv_sbox_v(128)) as u32;
@@ -465,9 +465,9 @@ impl Aes {
 	    rkp = &{rkp}[8..];
 	}
 
-	put_unaligned_le32(inv_subshift(&st1, 0) ^ rkp[4], index_fixed!(&mut out;..4));
-	put_unaligned_le32(inv_subshift(&st1, 1) ^ rkp[5], index_fixed!(&mut out;4,..8));
-	put_unaligned_le32(inv_subshift(&st1, 2) ^ rkp[6], index_fixed!(&mut out;8,..12));
-	put_unaligned_le32(inv_subshift(&st1, 3) ^ rkp[7], index_fixed!(&mut out;12,..16));
+	put_unaligned_le32(inv_subshift(&st1, 0) ^ rkp[4], index_fixed!(&mut out[..];..4));
+	put_unaligned_le32(inv_subshift(&st1, 1) ^ rkp[5], index_fixed!(&mut out[..];4,..8));
+	put_unaligned_le32(inv_subshift(&st1, 2) ^ rkp[6], index_fixed!(&mut out[..];8,..12));
+	put_unaligned_le32(inv_subshift(&st1, 3) ^ rkp[7], index_fixed!(&mut out[..];12,..16));
     }
 }
