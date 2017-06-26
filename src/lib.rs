@@ -372,7 +372,7 @@ impl Aes {
 	Ok(())
     }
 
-    pub fn encrypt(&self, out: &mut [u8], inp: &[u8])
+    pub fn encrypt(&self, out: &mut [u8;16], inp: &[u8;16])
     {
 	debug_assert_eq!(out.len(), inp.len());
 	// debug_assert_eq!(out.len(), BLOCK_SIZE)
@@ -421,7 +421,7 @@ impl Aes {
 	put_unaligned_le32(subshift(&st1, 3) ^ rkp[7], index_fixed!(&mut out;12,..16));
     }
 
-    pub fn decrypt(&self, out: &mut [u8], inp: &[u8])
+    pub fn decrypt(&self, out: &mut [u8;16], inp: &[u8;16])
     {
 	debug_assert_eq!(out.len(), inp.len());
 	// debug_assert_eq!(out.len(), BLOCK_SIZE)

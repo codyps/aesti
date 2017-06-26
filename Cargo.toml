@@ -1,6 +1,6 @@
 [package]
 name = "aesti"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Cody P Schafer <dev@codyps.com>"]
 license = "GPL-2.0"
 description = "Constant/fixed/invariant time aes implimentation (originally from Linux)"
@@ -11,7 +11,7 @@ documentation = "https://docs.rs/aesti"
 categories = [ "cryptography", "no-std" ]
 
 [dependencies]
-index-fixed = "0.1"
+index-fixed = "0.2"
 
 [dev-dependencies]
 openssl = "0.9"

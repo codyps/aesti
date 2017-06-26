@@ -4,6 +4,9 @@ extern crate hex;
 extern crate fmt_extra;
 
 #[macro_use]
+extern crate index_fixed;
+
+#[macro_use]
 extern crate quickcheck;
 
 #[derive(Clone,PartialEq,Eq,Debug,Hash)]
@@ -29,7 +32,7 @@ fn aes_encrypt(key: &[u8], data: &[u8]) -> Vec<u8>
 {
     let aes = aesti::Aes::with_key(key).unwrap();
     let mut out = vec![0;data.len()];
-    aes.encrypt(&mut out, data);
+    aes.encrypt(index_fixed!(&mut out;..16), index_fixed!(&data;..16));
     out
 }
 
@@ -37,7 +40,7 @@ fn aes_decrypt(key: &[u8], data: &[u8]) -> Vec<u8>
 {
     let aes = aesti::Aes::with_key(key).unwrap();
     let mut out = vec![0;data.len()];
-    aes.decrypt(&mut out, data);
+    aes.decrypt(index_fixed!(&mut out;..16), index_fixed!(&data;..16));
     out
 }
 
