@@ -1,0 +1,13 @@
+language: rust
+dist: trusty
+
+rust:
+  - stable
+  - beta
+  - nightly
+
+branches:
+  only:
+    - staging
+    - trying
+    - master
