@@ -2,6 +2,7 @@ extern crate aesti;
 extern crate openssl;
 extern crate hex;
 extern crate fmt_extra;
+extern crate rand;
 
 #[macro_use]
 extern crate index_fixed;
@@ -18,6 +19,7 @@ enum AesKind {
 
 impl quickcheck::Arbitrary for AesKind {
     fn arbitrary<G: quickcheck::Gen>(g: &mut G) -> Self {
+        use rand::Rng;
         g.choose(&[AesKind::K128, AesKind::K192, AesKind::K256]).unwrap().clone()
     }
 
