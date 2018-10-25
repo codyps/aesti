@@ -204,7 +204,7 @@ fn inv_mix_columns(x: u32) -> u32
 #[inline]
 fn subshift(inp: &[u32], pos: usize) -> u32
 {
-    sbox((inp[pos] & 0xff)) ^
+    sbox(inp[pos] & 0xff) ^
 	(sbox((inp[((pos + 1) % 4)] >>  8) & 0xff) <<  8) ^
 	(sbox((inp[((pos + 2) % 4)] >> 16) & 0xff) << 16) ^
 	(sbox((inp[((pos + 3) % 4)] >> 24) & 0xff) << 24)
