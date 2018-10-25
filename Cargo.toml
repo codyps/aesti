@@ -11,7 +11,7 @@ documentation = "https://docs.rs/aesti"
 categories = [ "cryptography", "no-std" ]
 
 [dependencies]
-index-fixed = "0.2"
+index-fixed = "0.3"
 
 [dev-dependencies]
 openssl = "0.9"
