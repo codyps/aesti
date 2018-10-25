@@ -14,7 +14,8 @@ categories = [ "cryptography", "no-std" ]
 index-fixed = "0.3"
 
 [dev-dependencies]
-openssl = "0.9"
-quickcheck = "0.4"
+openssl = "0.10"
+quickcheck = "0.7"
 hex = "0.3"
-fmt-extra = "0.1"
+fmt-extra = "0.2"
+rand = "0.5"
