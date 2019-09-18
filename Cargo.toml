@@ -16,6 +16,6 @@ index-fixed = "0.3"
 [dev-dependencies]
 openssl = "0.10"
 quickcheck = "0.8"
-hex = "0.3"
+hex = "0.4"
 fmt-extra = "0.2"
 rand = "0.6"
